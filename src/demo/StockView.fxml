@@ -15,7 +15,7 @@
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="demo.StockViewController">
   <tabs>
-    <Tab text="Stock 1">
+    <Tab text="MSFT">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -28,7 +28,7 @@
                                     <Font name="System Bold" size="13.0" />
                                  </font>
                               </Label>
-                              <DatePicker fx:id="stockDayPicker" layoutX="9.0" layoutY="41.0" onInputMethodTextChanged="#findStock1" prefHeight="25.0" prefWidth="157.0" />
+                              <DatePicker fx:id="stockDayPicker" layoutX="9.0" layoutY="41.0" onAction="#findStock1" prefHeight="25.0" prefWidth="157.0" />
                               <Label layoutX="8.0" layoutY="282.0" text="Update Stock Information" textFill="#14ab71">
                                  <font>
                                     <Font name="System Bold" size="13.0" />
@@ -40,7 +40,7 @@
                                     <Font name="System Bold" size="13.0" />
                                  </font>
                               </Label>
-                              <DatePicker fx:id="stockRangerPicker" layoutX="9.0" layoutY="110.0" onInputMethodTextChanged="#addToList1" prefHeight="25.0" prefWidth="157.0" />
+                              <DatePicker fx:id="stockRangePicker" layoutX="9.0" layoutY="110.0" onInputMethodTextChanged="#addToList1" prefHeight="25.0" prefWidth="157.0" />
                               <ListView fx:id="stockRangeList" layoutX="12.0" layoutY="147.0" prefHeight="123.0" prefWidth="151.0" />
                            </children>
                         </AnchorPane>
@@ -116,7 +116,7 @@
                </children></AnchorPane>
       </content>
     </Tab>
-      <Tab text="Stock 2">
+      <Tab text="ADX">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -141,7 +141,7 @@
                                     <Font name="System Bold" size="13.0" />
                                  </font>
                               </Label>
-                              <DatePicker fx:id="stockRangerPicker1" layoutX="9.0" layoutY="110.0" onInputMethodTextChanged="#addToList2" prefHeight="25.0" prefWidth="157.0" />
+                              <DatePicker fx:id="stockRangePicker1" layoutX="9.0" layoutY="110.0" onInputMethodTextChanged="#addToList2" prefHeight="25.0" prefWidth="157.0" />
                               <ListView fx:id="stockRangeList1" layoutX="12.0" layoutY="147.0" prefHeight="123.0" prefWidth="151.0" />
                            </children>
                         </AnchorPane>

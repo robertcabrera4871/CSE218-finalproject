@@ -18,6 +18,7 @@ public class Demo extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		TabPane root = (TabPane)FXMLLoader.load(getClass().getResource("StockView.fxml"));
 		Scene scene = new Scene(root,600,400);
+		primaryStage.setTitle("Stock Application");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
