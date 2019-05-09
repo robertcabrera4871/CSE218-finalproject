@@ -4,15 +4,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class StockDay {
-//	@JsonProperty("1. open")
 	private double open;
-//	@JsonProperty("1. open")
 	private double high;
-//	@JsonProperty("3. low")
 	private double low;
-//	@JsonProperty("4. close")
 	private double close;
-//	@JsonProperty("5. volume")
 	private long volume;
 	
 	@JsonCreator

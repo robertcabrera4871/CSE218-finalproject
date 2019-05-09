@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="demo.StockViewController">
+  <tabs>
+    <Tab text="Stock 1">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <SplitPane dividerPositions="0.29797979797979796" prefHeight="371.0" prefWidth="600.0" style="-fx-background-color: #bcd0c8;">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="381.0" prefWidth="175.0">
+                           <children>
+                              <Label layoutX="43.0" layoutY="14.0" text="FInd Stock Data" textFill="#15ab6f">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="stockDayPicker" layoutX="9.0" layoutY="41.0" onInputMethodTextChanged="#findStock1" prefHeight="25.0" prefWidth="157.0" />
+                              <Label layoutX="8.0" layoutY="282.0" text="Update Stock Information" textFill="#14ab71">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="changeStockPicker" layoutX="9.0" layoutY="313.0" onInputMethodTextChanged="#createNewStock1" prefHeight="25.0" prefWidth="157.0" />
+                              <Label layoutX="21.0" layoutY="82.0" text="Choose Specific Dates" textFill="#15ab6f">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="stockRangerPicker" layoutX="9.0" layoutY="110.0" onInputMethodTextChanged="#addToList1" prefHeight="25.0" prefWidth="157.0" />
+                              <ListView fx:id="stockRangeList" layoutX="12.0" layoutY="147.0" prefHeight="123.0" prefWidth="151.0" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="138.0" prefWidth="193.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f9fa" height="33.0" layoutX="144.0" layoutY="33.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fdfeff" height="31.0" layoutX="8.0" layoutY="34.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
+                              <Label layoutX="193.0" layoutY="74.0" text="Low" textFill="#15ab6f">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="189.0" layoutY="14.0" text="Close" textFill="#15ab6f">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="50.0" layoutY="14.0" text="Open" textFill="#15ab6f">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="54.0" layoutY="74.0" text="High" textFill="#15ab6f">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f9fa" height="33.0" layoutX="144.0" layoutY="93.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f9fa" height="33.0" layoutX="8.0" layoutY="93.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
+                              <Text fx:id="closeText" layoutX="164.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="80.5390625" />
+                              <Text fx:id="openText" layoutX="29.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="80.5390625" />
+                              <Text fx:id="highText" layoutX="29.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="80.5390625" />
+                              <Text fx:id="lowText" layoutX="165.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="80.5390625" />
+                              <Label layoutX="319.0" layoutY="31.0" text="Volume" textFill="#15ab6f">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f9fa" height="33.0" layoutX="282.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
+                              <Text fx:id="volumeText" layoutX="303.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="80.5390625" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f9fa" height="33.0" layoutX="13.0" layoutY="269.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fdfeff" height="31.0" layoutX="147.0" layoutY="270.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
+                              <Label layoutX="184.0" layoutY="244.0" text="Highest" textAlignment="CENTER" textFill="#15ab6f">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="50.0" layoutY="244.0" prefHeight="19.0" prefWidth="65.0" text="Average" textFill="#15ab6f">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="highestText" layoutX="168.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="80.5390625" />
+                              <Text fx:id="avgText" layoutX="34.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="80.5390625" />
+                              <DialogPane contentText="Please select a new date" headerText="The market was closed on that date" layoutX="265.0" layoutY="266.0" visible="false">
+                                 <buttonTypes>
+                                    <ButtonType fx:constant="CLOSE" />
+                                 </buttonTypes>
+                              </DialogPane>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fdfeff" height="31.0" layoutX="285.0" layoutY="270.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
+                              <Label layoutX="322.0" layoutY="244.0" text="Lowest" textAlignment="CENTER" textFill="#15ab6f">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="lowestText" layoutX="306.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="80.5390625" />
+                              <Text fx:id="dateHighestText" layoutX="196.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+                              <Text fx:id="dateLowestText" layoutX="334.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Stock 2">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <SplitPane dividerPositions="0.29797979797979796" prefHeight="371.0" prefWidth="600.0" style="-fx-background-color: #bcd0c8;">
+                     <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="381.0" prefWidth="175.0">
+                           <children>
+                              <Label layoutX="43.0" layoutY="14.0" text="FInd Stock Data" textFill="#15ab6f">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="stockDayPicker1" layoutX="9.0" layoutY="41.0" onInputMethodTextChanged="#findStock2" prefHeight="25.0" prefWidth="157.0" />
+                              <Label layoutX="8.0" layoutY="282.0" text="Update Stock Information" textFill="#14ab71">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="changeStockPicker1" layoutX="9.0" layoutY="313.0" onInputMethodTextChanged="#createNewStock2" prefHeight="25.0" prefWidth="157.0" />
+                              <Label layoutX="21.0" layoutY="82.0" text="Choose Specific Dates" textFill="#15ab6f">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="stockRangerPicker1" layoutX="9.0" layoutY="110.0" onInputMethodTextChanged="#addToList2" prefHeight="25.0" prefWidth="157.0" />
+                              <ListView fx:id="stockRangeList1" layoutX="12.0" layoutY="147.0" prefHeight="123.0" prefWidth="151.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="138.0" prefWidth="193.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f9fa" height="33.0" layoutX="144.0" layoutY="33.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fdfeff" height="31.0" layoutX="8.0" layoutY="34.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
+                              <Label layoutX="193.0" layoutY="74.0" text="Low" textFill="#15ab6f">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="189.0" layoutY="14.0" text="Close" textFill="#15ab6f">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="50.0" layoutY="14.0" text="Open" textFill="#15ab6f">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="54.0" layoutY="74.0" text="High" textFill="#15ab6f">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f9fa" height="33.0" layoutX="144.0" layoutY="93.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f9fa" height="33.0" layoutX="8.0" layoutY="93.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
+                              <Text fx:id="closeText1" layoutX="164.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="80.5390625" />
+                              <Text fx:id="openText1" layoutX="29.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="80.5390625" />
+                              <Text fx:id="highText1" layoutX="29.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="80.5390625" />
+                              <Text fx:id="lowText1" layoutX="165.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="80.5390625" />
+                              <Label layoutX="319.0" layoutY="31.0" text="Volume" textFill="#15ab6f">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f9fa" height="33.0" layoutX="282.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
+                              <Text fx:id="volumeText1" layoutX="303.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="80.5390625" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f9fa" height="33.0" layoutX="13.0" layoutY="269.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fdfeff" height="31.0" layoutX="147.0" layoutY="270.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
+                              <Label layoutX="184.0" layoutY="244.0" text="Highest" textAlignment="CENTER" textFill="#15ab6f">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="50.0" layoutY="244.0" prefHeight="19.0" prefWidth="65.0" text="Average" textFill="#15ab6f">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="highestText1" layoutX="168.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="80.5390625" />
+                              <Text fx:id="avgText1" layoutX="34.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="80.5390625" />
+                              <DialogPane contentText="Please select a new date" headerText="The market was closed on that date" layoutX="265.0" layoutY="266.0" visible="false">
+                                 <buttonTypes>
+                                    <ButtonType fx:constant="CLOSE" />
+                                 </buttonTypes>
+                              </DialogPane>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fdfeff" height="31.0" layoutX="285.0" layoutY="270.0" stroke="BLACK" strokeType="INSIDE" width="122.0" />
+                              <Label layoutX="322.0" layoutY="244.0" text="Lowest" textAlignment="CENTER" textFill="#15ab6f">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="lowestText1" layoutX="306.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="80.5390625" />
+                              <Text fx:id="dateHighestText1" layoutX="196.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+                              <Text fx:id="dateLowestText1" layoutX="334.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+                           </children>
+                        </AnchorPane>
+                     </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
