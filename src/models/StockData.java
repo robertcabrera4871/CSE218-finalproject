@@ -8,7 +8,7 @@ public class StockData {
 	@JsonProperty("Meta Data")
 	private MetaData metaData;
 	@JsonProperty("Time Series (Daily)")
-	private HashMap<String, TimeSeries> timeSeries;
+	private HashMap<String, StockDay> stocks;
 	
 	public MetaData getMetaData() {
 		return metaData;
@@ -16,11 +16,11 @@ public class StockData {
 	public void setMetaData(MetaData metaData) {
 		this.metaData = metaData;
 	}
-	public HashMap<String, TimeSeries> getTimeSeries() {
-		return timeSeries;
+	public HashMap<String, StockDay> getStocks() {
+		return stocks;
 	}
-	public void setTimeSeries(HashMap<String, TimeSeries> timeSeries) {
-		this.timeSeries = timeSeries;
+	public void setStocks(HashMap<String, StockDay> stocks) {
+		this.stocks = stocks;
 	}
 	
 	

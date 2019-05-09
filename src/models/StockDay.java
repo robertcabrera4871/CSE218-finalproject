@@ -1,18 +1,29 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class TimeSeries {
-	@JsonProperty("1. open")
+public class StockDay {
+//	@JsonProperty("1. open")
 	private double open;
-	@JsonProperty("2. high")
+//	@JsonProperty("1. open")
 	private double high;
-	@JsonProperty("3. low")
+//	@JsonProperty("3. low")
 	private double low;
-	@JsonProperty("4. close")
+//	@JsonProperty("4. close")
 	private double close;
-	@JsonProperty("5. volume")
+//	@JsonProperty("5. volume")
 	private long volume;
+	
+	@JsonCreator
+	public StockDay(@JsonProperty("1. open")double open, @JsonProperty("2. high")double high, 
+			@JsonProperty("3. low")double low, @JsonProperty("4. close")double close,@JsonProperty("5. volume") long volume) {
+		this.open = open;
+		this.high = high;
+		this.low = low;
+		this.close = close;
+		this.volume = volume;
+	}
 
 	public double getOpen() {
 		return open;
