@@ -56,8 +56,8 @@ public class MetaData {
 
 	@Override
 	public String toString() {
-		return "MetaData [information=" + information + ", symbol=" + symbol + ", lastRefreshed=" + lastRefreshed
-				+ ", outputSize=" + outputSize + ", timeZone=" + timeZone + "]";
+		return "Information: " + information + "\n Symbol: " + symbol + "\n Last Refreshed: " + lastRefreshed
+				+ "\n Output Size: " + outputSize + "\n Time Zone:" + timeZone;
 	}
 
 }

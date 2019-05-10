@@ -1,5 +1,8 @@
 package demo;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,9 +12,6 @@ import javafx.stage.Stage;
 public class Demo extends Application{
 
 	public static void main(String[] args) {	
-//		StockData msft = DataFactory.generateData("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=8Y8VNRTWK1PBQ5AU&dataype=json");
-//		StockData adx = DataFactory.generateData("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=ADX&apikey=8Y8VNRTWK1PBQ5AU&dataype=json");;
-//		System.out.println(msft.getStocks().keySet());
 		launch(args);
 	}
 

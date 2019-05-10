@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonType?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.DialogPane?>
@@ -34,13 +35,13 @@
                                     <Font name="System Bold" size="13.0" />
                                  </font>
                               </Label>
-                              <DatePicker fx:id="changeStockPicker" layoutX="9.0" layoutY="313.0" onInputMethodTextChanged="#createNewStock1" prefHeight="25.0" prefWidth="157.0" />
+                              <DatePicker fx:id="changeStockPicker" layoutX="9.0" layoutY="313.0" onAction="#createNewStock1" prefHeight="25.0" prefWidth="157.0" />
                               <Label layoutX="21.0" layoutY="82.0" text="Choose Specific Dates" textFill="#15ab6f">
                                  <font>
                                     <Font name="System Bold" size="13.0" />
                                  </font>
                               </Label>
-                              <DatePicker fx:id="stockRangePicker" layoutX="9.0" layoutY="110.0" onInputMethodTextChanged="#addToList1" prefHeight="25.0" prefWidth="157.0" />
+                              <DatePicker fx:id="stockRangePicker" layoutX="9.0" layoutY="110.0" onAction="#addToList1" prefHeight="25.0" prefWidth="157.0" />
                               <ListView fx:id="stockRangeList" layoutX="12.0" layoutY="147.0" prefHeight="123.0" prefWidth="151.0" />
                            </children>
                         </AnchorPane>
@@ -109,6 +110,7 @@
                               <Text fx:id="lowestText" layoutX="306.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="80.5390625" />
                               <Text fx:id="dateHighestText" layoutX="196.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
                               <Text fx:id="dateLowestText" layoutX="334.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+                              <Button fx:id="metaDataButton" layoutX="38.0" layoutY="328.0" mnemonicParsing="false" onAction="#showMetaData" text="Meta Data" />
                            </children>
                         </AnchorPane>
                     </items>
@@ -129,19 +131,19 @@
                                     <Font name="System Bold" size="13.0" />
                                  </font>
                               </Label>
-                              <DatePicker fx:id="stockDayPicker1" layoutX="9.0" layoutY="41.0" onInputMethodTextChanged="#findStock2" prefHeight="25.0" prefWidth="157.0" />
+                              <DatePicker fx:id="stockDayPicker1" layoutX="9.0" layoutY="41.0" onAction="#findStock2" prefHeight="25.0" prefWidth="157.0" />
                               <Label layoutX="8.0" layoutY="282.0" text="Update Stock Information" textFill="#14ab71">
                                  <font>
                                     <Font name="System Bold" size="13.0" />
                                  </font>
                               </Label>
-                              <DatePicker fx:id="changeStockPicker1" layoutX="9.0" layoutY="313.0" onInputMethodTextChanged="#createNewStock2" prefHeight="25.0" prefWidth="157.0" />
+                              <DatePicker fx:id="changeStockPicker1" layoutX="9.0" layoutY="313.0" onAction="#createNewStock2" prefHeight="25.0" prefWidth="157.0" />
                               <Label layoutX="21.0" layoutY="82.0" text="Choose Specific Dates" textFill="#15ab6f">
                                  <font>
                                     <Font name="System Bold" size="13.0" />
                                  </font>
                               </Label>
-                              <DatePicker fx:id="stockRangePicker1" layoutX="9.0" layoutY="110.0" onInputMethodTextChanged="#addToList2" prefHeight="25.0" prefWidth="157.0" />
+                              <DatePicker fx:id="stockRangePicker1" layoutX="9.0" layoutY="110.0" onAction="#addToList2" prefHeight="25.0" prefWidth="157.0" />
                               <ListView fx:id="stockRangeList1" layoutX="12.0" layoutY="147.0" prefHeight="123.0" prefWidth="151.0" />
                            </children>
                         </AnchorPane>
@@ -210,6 +212,7 @@
                               <Text fx:id="lowestText1" layoutX="306.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="80.5390625" />
                               <Text fx:id="dateHighestText1" layoutX="196.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
                               <Text fx:id="dateLowestText1" layoutX="334.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+                              <Button fx:id="metaDataButton2" layoutX="38.0" layoutY="328.0" mnemonicParsing="false" onAction="#showMetaData1" text="Meta Data" />
                            </children>
                         </AnchorPane>
                      </items>
