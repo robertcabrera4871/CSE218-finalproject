@@ -29,14 +29,14 @@ import utils.GetKeyUtil;
 import utils.UpdateStatsUtil;
 
 public class StockViewController {
-	// private StockData msft =
-	// DataFactory.generateDataURL("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&outputsize=full&apikey=8Y8VNRTWK1PBQ5AU&dataype=json");
-	// private StockData adx =
-	// DataFactory.generateDataURL("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=ADX&outputsize=full&apikey=8Y8VNRTWK1PBQ5AU&dataype=json");
-	private StockData msft = DataFactory
-			.generateDataString("C:\\Users\\rober\\eclipse-workspace-Hackathon\\CSE218-finalproject\\src\\msft.json");
-	private StockData adx = DataFactory
-			.generateDataString("C:\\Users\\rober\\eclipse-workspace-Hackathon\\CSE218-finalproject\\src\\adx.json");
+	private StockData msft = DataFactory.generateDataURL(
+			"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&outputsize=full&apikey=8Y8VNRTWK1PBQ5AU&dataype=json");
+	private StockData adx = DataFactory.generateDataURL(
+			"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=ADX&outputsize=full&apikey=8Y8VNRTWK1PBQ5AU&dataype=json");
+//	private StockData msft = DataFactory
+//			.generateDataString("C:\\Users\\rober\\eclipse-workspace-Hackathon\\CSE218-finalproject\\src\\msft.json");
+//	private StockData adx = DataFactory
+//			.generateDataString("C:\\Users\\rober\\eclipse-workspace-Hackathon\\CSE218-finalproject\\src\\adx.json");
 	@FXML
 	private DatePicker stockDayPicker;
 	@FXML
@@ -123,7 +123,6 @@ public class StockViewController {
 	@FXML
 	private Button metaDataButton1;
 
-	// Event Listener on DatePicker[#stockDayPicker].onAction
 	@FXML
 	public void findStock1(ActionEvent event) {
 		LocalDate datePicked = stockDayPicker.getValue();
@@ -250,6 +249,7 @@ public class StockViewController {
 			}
 			if (tempStock != null)
 				day.replaceDay(tempStock);
+			tempStock = null;
 		}
 	}
 
@@ -265,6 +265,7 @@ public class StockViewController {
 			}
 			if (tempStock != null)
 				day.replaceDay(tempStock);
+			tempStock = null;
 		}
 	}
 

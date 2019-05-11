@@ -1,6 +1,5 @@
 package controllers;
 
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -25,12 +24,13 @@ public class NewStockController {
 	@FXML
 	private Button newStockText;
 	private Alert alert = createAlert();
+	private StockDay day = null;
 
 	@FXML
 	public void createNewStock(ActionEvent event) {
 		try {
 			if (checkFields()) {
-				StockDay day = new StockDay(0, 0, 0, 0, 0);
+				day = new StockDay(0, 0, 0, 0, 0);
 				day.setOpen(Double.parseDouble(newOpenText.getText()));
 				day.setClose(Double.parseDouble(newCloseText.getText()));
 				day.setHigh(Double.parseDouble(newHighText.getText()));
