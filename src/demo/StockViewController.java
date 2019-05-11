@@ -17,6 +17,8 @@ import javafx.scene.text.Text;
 import models.CompareList;
 import models.StockData;
 import models.StockDay;
+import utils.CheckDuplicateUtil;
+import utils.GetKeyUtil;
 import utils.UpdateStatsUtil;
 
 public class StockViewController {
@@ -65,6 +67,10 @@ public class StockViewController {
 	@FXML
 	private Text dateLowestText;
 	@FXML
+	private Text dateHighestText1;
+	@FXML
+	private Text dateLowestText1;
+	@FXML
 	private Text closeText1;
 	@FXML
 	private Text openText1;
@@ -80,10 +86,7 @@ public class StockViewController {
 	private Text avgText1;
 	@FXML
 	private Text lowestText1;
-	@FXML
-	private Text dateHighestText1;
-	@FXML
-	private Text dateLowestText1;
+
 
 	@FXML
 	private Button clearListButton;
@@ -104,8 +107,8 @@ public class StockViewController {
 	private LocalDate msftOpenDate = LocalDate.of(1986, 3, 13);
 	private LocalDate adxOpenDate = LocalDate.of(1980, 3, 1);
 	
-	private ArrayList<StockDay> stockListMSFT = new ArrayList<StockDay>(100);
-	private ArrayList<StockDay> stockListADX = new ArrayList<StockDay>(100); 
+	private ArrayList<StockDay> stockListMSFT = new ArrayList<StockDay>();
+	private ArrayList<StockDay> stockListADX = new ArrayList<StockDay>(); 
 
 	@FXML
 	private Button metaDataButton;
@@ -138,7 +141,7 @@ public class StockViewController {
 			volumeText1.setText(String.valueOf(day.getVolume()));
 		}
 	}
-
+	//Have to iterate through ArrayList to make sure no duplicates
 	@FXML
 	public void addToList1(ActionEvent event) {
 		LocalDate datePicked = stockRangePicker.getValue();
@@ -148,7 +151,7 @@ public class StockViewController {
 		} catch (Exception e) {
 			listView1.setItems(dateListMSFT);
 		}
-		if (checkDate(day, datePicked, msftOpenDate)) {
+		if (checkDateList(day, datePicked, msftOpenDate, dateListMSFT)) {
 			stockListMSFT.add(day);
 			dateListMSFT.add(datePicked);
 			updateStats1(stockListMSFT);
@@ -158,39 +161,68 @@ public class StockViewController {
 	@FXML
 	public void addToList2(ActionEvent event) {
 		LocalDate datePicked = stockRangePicker1.getValue();
-		StockDay day = msft.getStocks().get(datePicked.toString());
+		StockDay day = adx.getStocks().get(datePicked.toString());
 		try {
 			listView2.getItems().get(0);
 		} catch (Exception e) {
 			listView2.setItems(dateListADX);
 		}
-		if(checkDate(day,datePicked,adxOpenDate)) {
+		if(checkDateList(day,datePicked,adxOpenDate, dateListADX)) {
 			stockListADX.add(day);
 			dateListADX.add(stockRangePicker1.getValue());
 			updateStats2(stockListADX);
 		}
 	}
+	//Unfortunately Have to iterate to get key
 	private void updateStats1(ArrayList<StockDay> stockList) {
 		avgText.setText(UpdateStatsUtil.updateAvg(stockList));
-		highestText.setText(UpdateStatsUtil.updateHighest(stockList));
-		lowestText.setText(UpdateStatsUtil.updateLowest(stockList));
+		StockDay highestDay = UpdateStatsUtil.updateHighest(stockList);
+		String highKey = GetKeyUtil.getKey(highestDay, msft.getStocks());
+		highestText.setText(String.valueOf(highestDay.getHigh()));
+		dateHighestText.setText(highKey);
+		StockDay lowestDay = UpdateStatsUtil.updateLowest(stockList);
+		String lowestKey = GetKeyUtil.getKey(lowestDay, msft.getStocks());
+		lowestText.setText(String.valueOf(lowestDay.getLow()));
+		dateLowestText.setText(lowestKey);
 	}
 	private void updateStats2(ArrayList<StockDay> stockList) {
 		avgText1.setText(UpdateStatsUtil.updateAvg(stockList));
-		highestText1.setText(UpdateStatsUtil.updateHighest(stockList));
-		lowestText1.setText(UpdateStatsUtil.updateLowest(stockList));
+		StockDay highestDay = UpdateStatsUtil.updateHighest(stockList);
+		String highKey = GetKeyUtil.getKey(highestDay, adx.getStocks());
+		highestText1.setText(String.valueOf(highestDay.getHigh()));
+		dateHighestText1.setText(highKey);
+		StockDay lowestDay = UpdateStatsUtil.updateLowest(stockList);
+		String lowestKey = GetKeyUtil.getKey(lowestDay, adx.getStocks());
+		lowestText1.setText(String.valueOf(lowestDay.getLow()));
+		dateLowestText1.setText(lowestKey);
+	}
+	private void clearStats() {
+		avgText.setText(String.valueOf(0.0));
+		highestText.setText(String.valueOf(0.0));
+		lowestText.setText(String.valueOf(0.0));
+		dateHighestText.setText("Date");
+		dateLowestText.setText("Date");
+	}
+	private void clearStats1() {
+		avgText1.setText(String.valueOf(0.0));
+		highestText1.setText(String.valueOf(0.0));
+		lowestText1.setText(String.valueOf(0.0));
+		dateHighestText1.setText("Date");
+		dateLowestText1.setText("Date");
 	}
 
 	@FXML
 	void clearList(ActionEvent event) {
 		dateListMSFT.clear();
 		stockListMSFT.clear();
+		clearStats();
 	}
 
 	@FXML
 	void clearList1(ActionEvent event) {
 		dateListADX.clear();
 		stockListADX.clear();
+		clearStats1();
 	}
 
 	@FXML
@@ -223,6 +255,14 @@ public class StockViewController {
 		} else {
 			return true;
 		}
+	}
+	public boolean checkDateList(StockDay day, LocalDate datePicked, LocalDate openDate, ObservableList<LocalDate> dateList) {
+		if(checkDate(day,datePicked,openDate)) {
+			if(CheckDuplicateUtil.checkDupe(datePicked, dateList)){
+				return true;
+			}
+		}
+		return false;
 	}
 
 }
