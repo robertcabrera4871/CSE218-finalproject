@@ -11,7 +11,8 @@ public class ClosedAlert {
 		this.alert = new Alert(AlertType.INFORMATION);
 		alert.setTitle("Information Dialog");
 		alert.setHeaderText("Alert!");
-		alert.setContentText("The market was closed on that date");
+		alert.setContentText("The market was closed on that date \n or the data"
+				+ " does not go back that far (20 years)");
 	}
 
 	public void showAndWait() {
