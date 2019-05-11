@@ -1,7 +1,5 @@
 package demo;
 
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
