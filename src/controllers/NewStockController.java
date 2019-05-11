@@ -1,13 +1,9 @@
 package controllers;
 
-import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -46,7 +42,6 @@ public class NewStockController {
 				alert.showAndWait();
 			}
 		} catch (Exception e) {
-			//e.printStackTrace();
 			alert.showAndWait();
 		}
 
@@ -93,19 +88,8 @@ public class NewStockController {
 	}
 
 	public void changeScene(ActionEvent event) {
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/resources/StockView.fxml"));
-		try {
-			Parent root = loader.load();
-			Scene scene = root.getScene();
-			Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-			window.setScene(scene);
-			window.show();
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
+		Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		window.close();
 	}
 
 }
