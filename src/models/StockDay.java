@@ -59,6 +59,13 @@ public class StockDay {
 	public void setVolume(long volume) {
 		this.volume = volume;
 	}
+	public void replaceDay(StockDay day) {
+		this.open = day.getOpen();
+		this.close = day.getClose();
+		this.high = day.getHigh();
+		this.low = day.getLow();
+		this.volume = day.getVolume();
+	}
 
 	public String toString() {
 		return "StockDay [open=" + open + ", high=" + high + ", low=" + low + ", close=" + close + ", volume=" + volume
