@@ -42,7 +42,7 @@
                                  </font>
                               </Label>
                               <DatePicker fx:id="stockRangePicker" layoutX="9.0" layoutY="110.0" onAction="#addToList1" prefHeight="25.0" prefWidth="157.0" />
-                              <ListView fx:id="stockRangeList" layoutX="12.0" layoutY="147.0" prefHeight="123.0" prefWidth="151.0" />
+                              <ListView fx:id="listView1" layoutX="12.0" layoutY="147.0" prefHeight="123.0" prefWidth="151.0" />
                            </children>
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="138.0" prefWidth="193.0">
@@ -111,6 +111,7 @@
                               <Text fx:id="dateHighestText" layoutX="196.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
                               <Text fx:id="dateLowestText" layoutX="334.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
                               <Button fx:id="metaDataButton" layoutX="38.0" layoutY="328.0" mnemonicParsing="false" onAction="#showMetaData" text="Meta Data" />
+                              <Button fx:id="clearListButton" layoutX="42.0" layoutY="151.0" mnemonicParsing="false" onAction="#clearList" text="Clear List" />
                            </children>
                         </AnchorPane>
                     </items>
@@ -144,7 +145,7 @@
                                  </font>
                               </Label>
                               <DatePicker fx:id="stockRangePicker1" layoutX="9.0" layoutY="110.0" onAction="#addToList2" prefHeight="25.0" prefWidth="157.0" />
-                              <ListView fx:id="stockRangeList1" layoutX="12.0" layoutY="147.0" prefHeight="123.0" prefWidth="151.0" />
+                              <ListView fx:id="listView2" layoutX="12.0" layoutY="147.0" prefHeight="123.0" prefWidth="151.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="138.0" prefWidth="193.0">
@@ -213,6 +214,7 @@
                               <Text fx:id="dateHighestText1" layoutX="196.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
                               <Text fx:id="dateLowestText1" layoutX="334.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
                               <Button fx:id="metaDataButton2" layoutX="38.0" layoutY="328.0" mnemonicParsing="false" onAction="#showMetaData1" text="Meta Data" />
+                              <Button fx:id="clearListButton1" layoutX="42.0" layoutY="150.0" mnemonicParsing="false" onAction="#clearList1" text="Clear List" />
                            </children>
                         </AnchorPane>
                      </items>
