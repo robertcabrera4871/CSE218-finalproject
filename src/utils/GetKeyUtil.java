@@ -7,9 +7,9 @@ import models.StockDay;
 
 public class GetKeyUtil {
 
-	public static String getKey(StockDay highestDay, HashMap<String, StockDay> stocks) {
+	public static String getKey(StockDay day, HashMap<String, StockDay> stocks) {
 		for(Entry<String,StockDay> entry: stocks.entrySet()) {
-			if(entry.getValue().equals(highestDay)) {
+			if(entry.getValue().equals(day)) {
 				return entry.getKey();
 			}
 		}

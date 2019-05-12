@@ -26,6 +26,7 @@ public class UpdateStatsUtil {
 			StockDay day = iterator.next();
 			if(day.getHigh() > highest) {
 				highestDay = day;
+				highest = highestDay.getHigh();
 			}
 		}
 		return highestDay;
@@ -33,12 +34,13 @@ public class UpdateStatsUtil {
 
 	public static StockDay updateLowest(ArrayList<StockDay> stockList) {
 		Iterator<StockDay> iterator = stockList.iterator();
-		double lowest = stockList.get(0).getLow();;
+		double lowest = 0.0;
 		StockDay lowestDay = null;
 		while(iterator.hasNext()) {
 			StockDay day = iterator.next();
-			if(day.getLow() <= lowest) {
+			if(day.getLow() < lowest || lowest == 0) {
 				lowestDay = day;
+				lowest = lowestDay.getLow();
 			}
 		}
 		return lowestDay;
